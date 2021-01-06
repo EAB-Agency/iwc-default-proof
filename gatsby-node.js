@@ -4,7 +4,7 @@ require("dotenv").config({
 const path = require("path")
 const { env } = process
 
-GATSBY_YOUVISIT_INSTID = env.PLATFORM_VARIABLES["GATSBY_YOUVISIT_INSTID"]
+const GATSBY_YOUVISIT_INSTID = env.PLATFORM_VARIABLES["GATSBY_YOUVISIT_INSTID"]
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
