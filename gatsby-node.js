@@ -6,9 +6,21 @@ const { GATSBY_YOUVISIT_INSTID } = process.env
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  // set GATSBY_YOUVISIT_INSTID in .platform.app.yaml for now
+  // set GATSBY_YOUVISIT_INSTID in .platform.app.yaml fo
   const instID = process.env.GATSBY_YOUVISIT_INSTID || GATSBY_YOUVISIT_INSTID
 
+  console.log(
+    "GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
+    GATSBY_YOUVISIT_INSTID
+  )
+  console.log(
+    "process.env.GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
+    process.env.GATSBY_YOUVISIT_INSTID
+  )
+  console.log(
+    "instID-----------------------&&&&&&&&&&&&---------------",
+    instID
+  )
   const partnerTemplate = path.resolve("./src/templates/partner-location.js")
   const internalTemplate = path.resolve("./src/templates/internal-location.js")
 
