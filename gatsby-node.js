@@ -8,6 +8,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const instID =
     process.env.GATSBY_YOUVISIT_INSTID || env.GATSBY_YOUVISIT_INSTID
+  console.log(
+    "env.GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
+    env.GATSBY_YOUVISIT_INSTID
+  )
+  console.log(
+    "process.env.GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
+    process.env.GATSBY_YOUVISIT_INSTID
+  )
+  console.log(
+    "instID-----------------------&&&&&&&&&&&&---------------",
+    instID
+  )
   const partnerTemplate = path.resolve("./src/templates/partner-location.js")
   const internalTemplate = path.resolve("./src/templates/internal-location.js")
 
