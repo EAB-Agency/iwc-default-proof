@@ -5,12 +5,15 @@ const path = require("path")
 const { env } = process
 
 // const gatsby_yv_id = env.PLATFORM_VARIABLES["GATSBY_YOUVISIT_INSTID"]
-
+let projectId = env.PLATFORM_PROJECT
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   // set GATSBY_YOUVISIT_INSTID in .platform.app.yaml fo
   const instID = process.env.GATSBY_YOUVISIT_INSTID
-
+  console.log(
+    "projectId-----------------------&&&&&&&&&&&&---------------",
+    projectId
+  )
   console.log(
     "env.PLATFORM_VARIABLES-----------------------&&&&&&&&&&&&---------------",
     env.PLATFORM_VARIABLES
