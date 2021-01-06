@@ -2,24 +2,13 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 const path = require("path")
-const { env } = process
+const { GATSBY_YOUVISIT_INSTID } = process.env
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const instID =
-    process.env.GATSBY_YOUVISIT_INSTID || env.GATSBY_YOUVISIT_INSTID
-  console.log(
-    "env.GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
-    env.GATSBY_YOUVISIT_INSTID
-  )
-  console.log(
-    "process.env.GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
-    process.env.GATSBY_YOUVISIT_INSTID
-  )
-  console.log(
-    "instID-----------------------&&&&&&&&&&&&---------------",
-    instID
-  )
+  // set GATSBY_YOUVISIT_INSTID in .platform.app.yaml for now
+  const instID = process.env.GATSBY_YOUVISIT_INSTID || GATSBY_YOUVISIT_INSTID
+
   const partnerTemplate = path.resolve("./src/templates/partner-location.js")
   const internalTemplate = path.resolve("./src/templates/internal-location.js")
 
@@ -35,7 +24,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
       }
     `,
-    { instID: instID }
+    {
+      instID: instID,
+    }
   )
 
   res.data.yv.institutions.locations.forEach(location => {
