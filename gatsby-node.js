@@ -2,10 +2,12 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 const path = require("path")
+const { env } = process
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const instID = process.env.GATSBY_YOUVISIT_INSTID || $GATSBY_YOUVISIT_INSTID
+  const instID =
+    process.env.GATSBY_YOUVISIT_INSTID || env.GATSBY_YOUVISIT_INSTID
   const partnerTemplate = path.resolve("./src/templates/partner-location.js")
   const internalTemplate = path.resolve("./src/templates/internal-location.js")
 
@@ -46,7 +48,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
-  const instID = process.env.GATSBY_YOUVISIT_INSTID || $GATSBY_YOUVISIT_INSTID
+  const instID =
+    process.env.GATSBY_YOUVISIT_INSTID || env.GATSBY_YOUVISIT_INSTID
 
   deletePage(page)
   // You can access the variable "instID" in your page queries now
