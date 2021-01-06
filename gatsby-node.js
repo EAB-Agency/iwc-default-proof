@@ -2,7 +2,9 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 const path = require("path")
-const { GATSBY_YOUVISIT_INSTID } = process.env
+const { env } = process
+
+GATSBY_YOUVISIT_INSTID = PLATFORM_VARIABLES["GATSBY_YOUVISIT_INSTID"]
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -10,12 +12,12 @@ module.exports.createPages = async ({ graphql, actions }) => {
   const instID = process.env.GATSBY_YOUVISIT_INSTID || GATSBY_YOUVISIT_INSTID
 
   console.log(
-    "GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
-    GATSBY_YOUVISIT_INSTID
+    "PLATFORM_VARIABLES-----------------------&&&&&&&&&&&&---------------",
+    PLATFORM_VARIABLES
   )
   console.log(
-    "process.env.GATSBY_YOUVISIT_INSTID-----------------------&&&&&&&&&&&&---------------",
-    process.env.GATSBY_YOUVISIT_INSTID
+    "envVariables-----------------------&&&&&&&&&&&&---------------",
+    envVariables
   )
   console.log(
     "instID-----------------------&&&&&&&&&&&&---------------",

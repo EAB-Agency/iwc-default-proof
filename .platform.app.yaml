@@ -12,9 +12,9 @@ hooks:
   build: |
     npm run build
 
-# variables:
-#   env:
-#     GATSBY_YOUVISIT_INSTID: "121419"
+variables:
+  env:
+    GATSBY_YOUVISIT_INSTID: "121419"
 
 # The size of the persistent disk of the application (in MB).
 disk: 5120
