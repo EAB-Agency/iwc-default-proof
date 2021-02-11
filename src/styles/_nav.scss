@@ -46,7 +46,8 @@ nav[role="navigation"]{
                 font-family: $f-sans;
                 letter-spacing: -0.01em;
 
-                &:hover, &:focus{
+                &:hover,
+                &:focus{
                     background: $c-primary-blue-lt;
                 }
 
@@ -128,7 +129,8 @@ nav[role="navigation"]{
 		}
 	}
 
-	&:hover{
+	&:hover,
+    &:focus{
 		background: none;
 		
 		@media(min-width: $mq-800){
@@ -144,7 +146,7 @@ nav[role="navigation"]{
 		}
 	}
 
-	&:focus,
+	// &:focus,
 	&:active{
 		background: none;
 	}
@@ -175,7 +177,8 @@ nav[role="navigation"]{
 			}
         }
         
-        &:hover{
+        &:hover,
+        &:focus{
             .burger-line{
                 background: $c-primary-orange;
             }
